@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeba Catharin | ECE Portfolio</title>
+<title>Jeba Catharin | Portfolio</title>
 
 <style>
 *{
@@ -17,9 +17,10 @@ body{
   background:#000;
   color:#ffffff;
   overflow-x:hidden;
+  min-height:300vh;
 }
 
-/* ===== SCROLL FRAME BACKGROUND ===== */
+/* ===== ANIMATION BACKGROUND ===== */
 #animation-container{
   position:fixed;
   top:0;
@@ -34,8 +35,8 @@ body{
   width:100%;
   height:100%;
   object-fit:cover;
-  opacity:0.18;   /* Increased visibility */
-  filter:grayscale(100%) contrast(120%) brightness(60%);
+  opacity:0.45;   /* Clearly visible */
+  filter:grayscale(60%) contrast(110%) brightness(90%);
 }
 
 /* ===== CONTENT WRAPPER ===== */
@@ -47,21 +48,15 @@ body{
   padding:60px 20px;
 }
 
-/* ===== GLASS SECTION (TRANSPARENT) ===== */
+/* ===== FULLY TRANSPARENT SECTIONS ===== */
 section{
-  margin-bottom:100px;
+  margin-bottom:120px;
   padding:50px;
-  background:rgba(255,255,255,0.05);  /* very transparent */
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:25px;
-}
-
-/* Remove heavy dark look */
-section:hover{
-  background:rgba(255,255,255,0.07);
-  transition:0.4s ease;
+  background:transparent;   /* No blue */
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:20px;
 }
 
 /* ===== TEXT ===== */
@@ -74,7 +69,7 @@ h1{
 h2{
   font-size:28px;
   margin-bottom:20px;
-  color:#00e5ff;
+  color:#00ffff;
 }
 
 h3{
@@ -97,20 +92,20 @@ ul{
 .btn{
   display:inline-block;
   margin-top:20px;
+  margin-right:15px;
   padding:12px 28px;
-  background:rgba(0,255,200,0.15);
-  border:1px solid rgba(0,255,200,0.4);
+  background:transparent;
+  border:1px solid #00ffcc;
   color:#00ffcc;
   text-decoration:none;
   font-weight:bold;
   border-radius:30px;
-  backdrop-filter:blur(5px);
   transition:0.3s;
 }
 
 .btn:hover{
-  background:rgba(0,255,200,0.3);
-  transform:scale(1.05);
+  background:#00ffcc;
+  color:#000;
 }
 
 /* ===== FOOTER ===== */
@@ -120,7 +115,7 @@ footer{
   opacity:0.6;
 }
 
-/* Mobile */
+/* Responsive */
 @media(max-width:768px){
   section{
     padding:30px;
@@ -130,7 +125,6 @@ footer{
 </head>
 <body>
 
-<!-- SCROLLABLE FRAME ANIMATION -->
 <div id="animation-container">
   <img id="frame" src="frames/ezgif-frame-001.jpg">
 </div>
@@ -150,7 +144,7 @@ footer{
 <section>
   <h2>Career Objective</h2>
   <p>
-    A dedicated and passionate Electronics and Communication Engineering student with a strong foundation in industrial automation, embedded systems, and innovative technology solutions. Seeking opportunities to apply technical knowledge in PLC programming, microcontroller-based systems, and automation control to solve real-world engineering challenges.
+    A dedicated and passionate Electronics and Communication Engineering student with a strong foundation in industrial automation, embedded systems, and innovative technology solutions.
   </p>
 </section>
 
@@ -174,51 +168,38 @@ footer{
 </section>
 
 <section id="projects">
-  <h2>Featured Projects</h2>
+  <h2>Projects</h2>
 
   <h3>Industrial Automation using PLC</h3>
   <ul>
-    <li>Designed ladder logic programs and integrated sensors/actuators.</li>
-    <li>Reduced manual intervention and improved industrial efficiency.</li>
-    <li><strong>Technologies:</strong> PLC, Ladder Logic, Sensors & Actuators, SCADA</li>
+    <li>Designed ladder logic programs and integrated sensors.</li>
+    <li>Reduced manual intervention.</li>
+    <li><strong>Technologies:</strong> PLC, Ladder Logic, SCADA</li>
   </ul>
 
   <br>
 
   <h3>Garbage Segregation & Bin Level Indicator</h3>
   <ul>
-    <li>Developed automated waste segregation system.</li>
-    <li>Implemented ultrasonic level detection for monitoring.</li>
-    <li><strong>Technologies:</strong> Arduino, IR Sensors, Ultrasonic Sensors, Servo Motors, IoT</li>
+    <li>Developed microcontroller-based waste segregation system.</li>
+    <li>Implemented ultrasonic monitoring.</li>
+    <li><strong>Technologies:</strong> Arduino, IoT</li>
   </ul>
 </section>
 
 <section>
-  <h2>Technical Skills</h2>
+  <h2>Skills</h2>
   <p>
-    PLC Programming, Embedded Systems, Industrial Automation, Electronics Circuit Design,
-    Microcontrollers, Sensors & Actuators, Ladder Logic, MATLAB, C/C++, PCB Design
-  </p>
-
-  <br>
-
-  <h2>Soft Skills</h2>
-  <p>
-    Leadership, Communication, Teamwork, Problem-solving, Time Management, Adaptability
+    PLC Programming, Embedded Systems, Industrial Automation, MATLAB,
+    C/C++, PCB Design, Sensors & Actuators
   </p>
 </section>
 
 <section>
   <h2>Internships</h2>
-
-  <h3>LinkedIn</h3>
-  <p>Exposure to professional networking platforms and system architectures.</p>
-
-  <h3>Google</h3>
-  <p>Hands-on experience with innovative technologies and scalable systems.</p>
-
-  <h3>Microsoft</h3>
-  <p>Worked with cloud-based technologies and agile development practices.</p>
+  <p><strong>LinkedIn</strong> – Exposure to system architectures.</p>
+  <p><strong>Google</strong> – Worked on scalable technologies.</p>
+  <p><strong>Microsoft</strong> – Cloud-based solutions & agile development.</p>
 </section>
 
 <section>
@@ -226,11 +207,10 @@ footer{
   <p>Email: jebacatharin@email.com</p>
   <p>Phone: +91 XXXXX XXXXX</p>
   <p>Location: Tirunelveli, Tamil Nadu</p>
-  <p>LinkedIn: linkedin.com/in/jebacatharin</p>
 </section>
 
 <footer>
-  © 2026 Jeba Catharin. All rights reserved.
+  © 2026 Jeba Catharin
 </footer>
 
 </div>
@@ -240,9 +220,10 @@ const frame = document.getElementById("frame");
 const totalFrames = 240;
 
 window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollTop = window.scrollY;
+  const scrollHeight = document.body.scrollHeight - window.innerHeight;
   const scrollFraction = scrollTop / scrollHeight;
+
   const frameIndex = Math.min(
     totalFrames - 1,
     Math.floor(scrollFraction * totalFrames)
