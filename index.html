@@ -1,49 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JC - Scroll Animation Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeba Catharin | ECE Portfolio</title>
 
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:#000;
+  color:#ffffff;
+  overflow-x:hidden;
+}
+
+/* ===== SCROLL FRAME BACKGROUND ===== */
+#animation-container{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  z-index:0;
+  pointer-events:none;
+}
+
+#animation-container img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.18;   /* Increased visibility */
+  filter:grayscale(100%) contrast(120%) brightness(60%);
+}
+
+/* ===== CONTENT WRAPPER ===== */
+.content{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+/* ===== GLASS SECTION (TRANSPARENT) ===== */
+section{
+  margin-bottom:100px;
+  padding:50px;
+  background:rgba(255,255,255,0.05);  /* very transparent */
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:25px;
+}
+
+/* Remove heavy dark look */
+section:hover{
+  background:rgba(255,255,255,0.07);
+  transition:0.4s ease;
+}
+
+/* ===== TEXT ===== */
+h1{
+  font-size:42px;
+  letter-spacing:3px;
+  margin-bottom:10px;
+}
+
+h2{
+  font-size:28px;
+  margin-bottom:20px;
+  color:#00e5ff;
+}
+
+h3{
+  font-size:20px;
+  margin-bottom:10px;
+  color:#00ffcc;
+}
+
+p, li{
+  line-height:1.8;
+  font-size:16px;
+}
+
+ul{
+  margin-left:20px;
+  margin-top:10px;
+}
+
+/* ===== BUTTONS ===== */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 28px;
+  background:rgba(0,255,200,0.15);
+  border:1px solid rgba(0,255,200,0.4);
+  color:#00ffcc;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:30px;
+  backdrop-filter:blur(5px);
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:rgba(0,255,200,0.3);
+  transform:scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px 0;
+  opacity:0.6;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  section{
+    padding:30px;
+  }
+}
+</style>
+</head>
 <body>
 
-  <!-- Loading Text -->
-  <div id="loader">
-    <h2>Loading Portfolio...</h2>
-    <p>Please wait</p>
-  </div>
+<!-- SCROLLABLE FRAME ANIMATION -->
+<div id="animation-container">
+  <img id="frame" src="frames/ezgif-frame-001.jpg">
+</div>
 
-  <!-- Scroll Animation Section -->
-  <section class="hero">
-    <canvas id="canvas"></canvas>
-    <div class="overlay">
-      <h1>Jeba Catharin</h1>
-      <p>Electronics & Communication Engineer</p>
-      <span>Scroll Down ⬇️</span>
-    </div>
-  </section>
+<div class="content">
 
-  <!-- Dummy content after animation -->
-  <section class="content">
-    <h2>About Me</h2>
-    <p>
-      Passionate about Industrial Automation, Embedded Systems, and building innovative
-      technology solutions that solve real-world engineering challenges.
-    </p>
+<section>
+  <h1>JEBA CATHARIN</h1>
+  <p><strong>Electronics & Communication Engineer</strong></p>
+  <p>
+    Passionate about industrial automation, embedded systems, and building innovative technology solutions that solve real-world engineering challenges.
+  </p>
+  <a href="#projects" class="btn">View Projects</a>
+  <a href="Jeba_Catharin_Resume.pdf" class="btn" download>Download Resume</a>
+</section>
 
-    <h2>Projects</h2>
-    <ul>
-      <li><b>Industrial Automation using PLC</b></li>
-      <li><b>Garbage Segregation & Bin Level Indicator</b></li>
-    </ul>
+<section>
+  <h2>Career Objective</h2>
+  <p>
+    A dedicated and passionate Electronics and Communication Engineering student with a strong foundation in industrial automation, embedded systems, and innovative technology solutions. Seeking opportunities to apply technical knowledge in PLC programming, microcontroller-based systems, and automation control to solve real-world engineering challenges.
+  </p>
+</section>
 
-    <h2>Contact</h2>
-    <p>Email: jebacatharin@email.com</p>
-    <p>Location: Tirunelveli, Tamil Nadu</p>
-  </section>
+<section>
+  <h2>Education</h2>
+  <p><strong>B.E. Electronics and Communication Engineering</strong><br>
+  Government College of Engineering, Tirunelveli<br>
+  CGPA: 8.33 | 2023 – 2027 (Expected)</p>
 
-  <script src="script.js"></script>
+  <br>
+
+  <p><strong>Higher Secondary (12th)</strong><br>
+  Sacred Heart Hr. Sec. School, Panagudi, Tirunelveli<br>
+  Marks: 548</p>
+
+  <br>
+
+  <p><strong>SSLC (10th)</strong><br>
+  Sacred Heart Hr. Sec. School, Panagudi, Tirunelveli<br>
+  Marks: 450</p>
+</section>
+
+<section id="projects">
+  <h2>Featured Projects</h2>
+
+  <h3>Industrial Automation using PLC</h3>
+  <ul>
+    <li>Designed ladder logic programs and integrated sensors/actuators.</li>
+    <li>Reduced manual intervention and improved industrial efficiency.</li>
+    <li><strong>Technologies:</strong> PLC, Ladder Logic, Sensors & Actuators, SCADA</li>
+  </ul>
+
+  <br>
+
+  <h3>Garbage Segregation & Bin Level Indicator</h3>
+  <ul>
+    <li>Developed automated waste segregation system.</li>
+    <li>Implemented ultrasonic level detection for monitoring.</li>
+    <li><strong>Technologies:</strong> Arduino, IR Sensors, Ultrasonic Sensors, Servo Motors, IoT</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Technical Skills</h2>
+  <p>
+    PLC Programming, Embedded Systems, Industrial Automation, Electronics Circuit Design,
+    Microcontrollers, Sensors & Actuators, Ladder Logic, MATLAB, C/C++, PCB Design
+  </p>
+
+  <br>
+
+  <h2>Soft Skills</h2>
+  <p>
+    Leadership, Communication, Teamwork, Problem-solving, Time Management, Adaptability
+  </p>
+</section>
+
+<section>
+  <h2>Internships</h2>
+
+  <h3>LinkedIn</h3>
+  <p>Exposure to professional networking platforms and system architectures.</p>
+
+  <h3>Google</h3>
+  <p>Hands-on experience with innovative technologies and scalable systems.</p>
+
+  <h3>Microsoft</h3>
+  <p>Worked with cloud-based technologies and agile development practices.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: jebacatharin@email.com</p>
+  <p>Phone: +91 XXXXX XXXXX</p>
+  <p>Location: Tirunelveli, Tamil Nadu</p>
+  <p>LinkedIn: linkedin.com/in/jebacatharin</p>
+</section>
+
+<footer>
+  © 2026 Jeba Catharin. All rights reserved.
+</footer>
+
+</div>
+
+<script>
+const frame = document.getElementById("frame");
+const totalFrames = 240;
+
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollFraction = scrollTop / scrollHeight;
+  const frameIndex = Math.min(
+    totalFrames - 1,
+    Math.floor(scrollFraction * totalFrames)
+  );
+
+  const frameNumber = String(frameIndex + 1).padStart(3, '0');
+  frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+});
+</script>
+
 </body>
 </html>
