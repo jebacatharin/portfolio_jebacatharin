@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,114 +7,125 @@
 <title>Jeba Catharin | ECE Portfolio</title>
 
 <style>
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
 }
 
-body {
-  background: #0f172a;
-  color: #ffffff;
-  overflow-x: hidden;
+body{
+  background:#000;
+  color:#ffffff;
+  overflow-x:hidden;
+  min-height:300vh; /* Important for smooth scroll animation */
 }
 
-/* ===== SCROLL ANIMATION BACKGROUND ===== */
-#animation-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
+/* ===== SCROLL FRAME BACKGROUND ===== */
+#animation-container{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  z-index:0;
+  pointer-events:none;
 }
 
-#animation-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.08; /* watermark transparency */
-  filter: grayscale(100%) contrast(120%);
+#animation-container img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.35;   /* Visible watermark */
+  filter:grayscale(70%) contrast(110%) brightness(85%);
 }
 
 /* ===== CONTENT WRAPPER ===== */
-.content {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
+.content{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
 }
 
-/* ===== SECTION STYLING ===== */
-section {
-  margin-bottom: 100px;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+/* ===== GLASS SECTIONS ===== */
+section{
+  margin-bottom:120px;
+  padding:50px;
+  background:rgba(255,255,255,0.03); /* More transparent */
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:25px;
+  transition:0.4s ease;
 }
 
-h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
+section:hover{
+  background:rgba(255,255,255,0.06);
 }
 
-h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #38bdf8;
+/* ===== TEXT ===== */
+h1{
+  font-size:42px;
+  letter-spacing:3px;
+  margin-bottom:10px;
 }
 
-h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #facc15;
+h2{
+  font-size:28px;
+  margin-bottom:20px;
+  color:#00e5ff;
 }
 
-p, li {
-  line-height: 1.7;
-  font-size: 16px;
+h3{
+  font-size:20px;
+  margin-bottom:10px;
+  color:#00ffcc;
 }
 
-ul {
-  margin-left: 20px;
-  margin-top: 10px;
+p, li{
+  line-height:1.8;
+  font-size:16px;
+}
+
+ul{
+  margin-left:20px;
+  margin-top:10px;
 }
 
 /* ===== BUTTONS ===== */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: linear-gradient(45deg, #38bdf8, #0ea5e9);
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: 0.3s ease;
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  margin-right:15px;
+  padding:12px 28px;
+  background:rgba(0,255,200,0.15);
+  border:1px solid rgba(0,255,200,0.4);
+  color:#00ffcc;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:30px;
+  backdrop-filter:blur(5px);
+  transition:0.3s;
 }
 
-.btn:hover {
-  transform: scale(1.05);
+.btn:hover{
+  background:rgba(0,255,200,0.3);
+  transform:scale(1.05);
 }
 
 /* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 40px 0;
-  opacity: 0.7;
+footer{
+  text-align:center;
+  padding:40px 0;
+  opacity:0.6;
 }
 
 /* Responsive */
 @media(max-width:768px){
-  section {
-    padding: 25px;
+  section{
+    padding:30px;
   }
 }
 </style>
@@ -130,7 +142,9 @@ footer {
 <section>
   <h1>JEBA CATHARIN</h1>
   <p><strong>Electronics & Communication Engineer</strong></p>
-  <p>Passionate about industrial automation, embedded systems, and building innovative technology solutions that solve real-world engineering challenges.</p>
+  <p>
+    Passionate about industrial automation, embedded systems, and building innovative technology solutions that solve real-world engineering challenges.
+  </p>
   <a href="#projects" class="btn">View Projects</a>
   <a href="Jeba_Catharin_Resume.pdf" class="btn" download>Download Resume</a>
 </section>
@@ -166,7 +180,7 @@ footer {
 
   <h3>Industrial Automation using PLC</h3>
   <ul>
-    <li>Designed ladder logic programs and integrated sensors/actuators for automated control.</li>
+    <li>Designed ladder logic programs and integrated sensors/actuators.</li>
     <li>Reduced manual intervention and improved industrial efficiency.</li>
     <li><strong>Technologies:</strong> PLC, Ladder Logic, Sensors & Actuators, SCADA</li>
   </ul>
@@ -175,20 +189,25 @@ footer {
 
   <h3>Garbage Segregation & Bin Level Indicator</h3>
   <ul>
-    <li>Developed microcontroller-based automated waste segregation system.</li>
-    <li>Implemented ultrasonic level detection for real-time monitoring.</li>
+    <li>Developed automated waste segregation system.</li>
+    <li>Implemented ultrasonic level detection for monitoring.</li>
     <li><strong>Technologies:</strong> Arduino, IR Sensors, Ultrasonic Sensors, Servo Motors, IoT</li>
   </ul>
 </section>
 
 <section>
   <h2>Technical Skills</h2>
-  <p>PLC Programming, Embedded Systems, Industrial Automation, Electronics Circuit Design, Microcontrollers, Sensors & Actuators, Ladder Logic, MATLAB, C/C++, PCB Design</p>
+  <p>
+    PLC Programming, Embedded Systems, Industrial Automation, Electronics Circuit Design,
+    Microcontrollers, Sensors & Actuators, Ladder Logic, MATLAB, C/C++, PCB Design
+  </p>
 
   <br>
 
   <h2>Soft Skills</h2>
-  <p>Leadership, Communication, Teamwork, Problem-solving, Time Management, Adaptability</p>
+  <p>
+    Leadership, Communication, Teamwork, Problem-solving, Time Management, Adaptability
+  </p>
 </section>
 
 <section>
@@ -197,12 +216,8 @@ footer {
   <h3>LinkedIn</h3>
   <p>Exposure to professional networking platforms and system architectures.</p>
 
-  <br>
-
   <h3>Google</h3>
   <p>Hands-on experience with innovative technologies and scalable systems.</p>
-
-  <br>
 
   <h3>Microsoft</h3>
   <p>Worked with cloud-based technologies and agile development practices.</p>
@@ -223,14 +238,16 @@ footer {
 </div>
 
 <script>
-// ===== SCROLL FRAME ANIMATION =====
 const frame = document.getElementById("frame");
 const totalFrames = 240;
 
-window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+let ticking = false;
+
+function updateFrame() {
+  const scrollTop = window.scrollY;
+  const scrollHeight = document.body.scrollHeight - window.innerHeight;
   const scrollFraction = scrollTop / scrollHeight;
+
   const frameIndex = Math.min(
     totalFrames - 1,
     Math.floor(scrollFraction * totalFrames)
@@ -238,6 +255,15 @@ window.addEventListener("scroll", () => {
 
   const frameNumber = String(frameIndex + 1).padStart(3, '0');
   frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+
+  ticking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateFrame);
+    ticking = true;
+  }
 });
 </script>
 
