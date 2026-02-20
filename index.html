@@ -91,4 +91,155 @@ ul {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 25px;
-  background: linear-gradient(45deg,
+  background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  section {
+    padding: 25px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLLABLE FRAME ANIMATION -->
+<div id="animation-container">
+  <img id="frame" src="frames/ezgif-frame-001.jpg" alt="Animation Frame">
+</div>
+
+<div class="content">
+
+<section>
+  <h1>JEBA CATHARIN</h1>
+  <p><strong>Electronics & Communication Engineer</strong></p>
+  <p>Passionate about industrial automation, embedded systems, and building innovative technology solutions that solve real-world engineering challenges.</p>
+  <a href="#projects" class="btn">View Projects</a>
+  <a href="Jeba_Catharin_Resume.pdf" class="btn" download>Download Resume</a>
+</section>
+
+<section>
+  <h2>Career Objective</h2>
+  <p>
+    A dedicated and passionate Electronics and Communication Engineering student with a strong foundation in industrial automation, embedded systems, and innovative technology solutions. Seeking opportunities to apply technical knowledge in PLC programming, microcontroller-based systems, and automation control to solve real-world engineering challenges.
+  </p>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <p><strong>B.E. Electronics and Communication Engineering</strong><br>
+  Government College of Engineering, Tirunelveli<br>
+  CGPA: 8.33 | 2023 – 2027 (Expected)</p>
+
+  <br>
+
+  <p><strong>Higher Secondary (12th)</strong><br>
+  Sacred Heart Hr. Sec. School, Panagudi, Tirunelveli<br>
+  Marks: 548</p>
+
+  <br>
+
+  <p><strong>SSLC (10th)</strong><br>
+  Sacred Heart Hr. Sec. School, Panagudi, Tirunelveli<br>
+  Marks: 450</p>
+</section>
+
+<section id="projects">
+  <h2>Featured Projects</h2>
+
+  <h3>Industrial Automation using PLC</h3>
+  <ul>
+    <li>Designed ladder logic programs and integrated sensors/actuators for automated control.</li>
+    <li>Reduced manual intervention and improved industrial efficiency.</li>
+    <li><strong>Technologies:</strong> PLC, Ladder Logic, Sensors & Actuators, SCADA</li>
+  </ul>
+
+  <br>
+
+  <h3>Garbage Segregation & Bin Level Indicator</h3>
+  <ul>
+    <li>Developed microcontroller-based automated waste segregation system.</li>
+    <li>Implemented ultrasonic level detection for real-time monitoring.</li>
+    <li><strong>Technologies:</strong> Arduino, IR Sensors, Ultrasonic Sensors, Servo Motors, IoT</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Technical Skills</h2>
+  <p>PLC Programming, Embedded Systems, Industrial Automation, Electronics Circuit Design, Microcontrollers, Sensors & Actuators, Ladder Logic, MATLAB, C/C++, PCB Design</p>
+
+  <br>
+
+  <h2>Soft Skills</h2>
+  <p>Leadership, Communication, Teamwork, Problem-solving, Time Management, Adaptability</p>
+</section>
+
+<section>
+  <h2>Internships</h2>
+
+  <h3>LinkedIn</h3>
+  <p>Exposure to professional networking platforms and system architectures.</p>
+
+  <br>
+
+  <h3>Google</h3>
+  <p>Hands-on experience with innovative technologies and scalable systems.</p>
+
+  <br>
+
+  <h3>Microsoft</h3>
+  <p>Worked with cloud-based technologies and agile development practices.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: jebacatharin@email.com</p>
+  <p>Phone: +91 XXXXX XXXXX</p>
+  <p>Location: Tirunelveli, Tamil Nadu</p>
+  <p>LinkedIn: linkedin.com/in/jebacatharin</p>
+</section>
+
+<footer>
+  © 2026 Jeba Catharin. All rights reserved.
+</footer>
+
+</div>
+
+<script>
+// ===== SCROLL FRAME ANIMATION =====
+const frame = document.getElementById("frame");
+const totalFrames = 240;
+
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollFraction = scrollTop / scrollHeight;
+  const frameIndex = Math.min(
+    totalFrames - 1,
+    Math.floor(scrollFraction * totalFrames)
+  );
+
+  const frameNumber = String(frameIndex + 1).padStart(3, '0');
+  frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+});
+</script>
+
+</body>
+</html>
