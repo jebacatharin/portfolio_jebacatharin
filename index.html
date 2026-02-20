@@ -17,6 +17,7 @@ body{
   background:#000;
   color:#ffffff;
   overflow-x:hidden;
+  min-height:300vh; /* Important for smooth scroll animation */
 }
 
 /* ===== SCROLL FRAME BACKGROUND ===== */
@@ -34,8 +35,8 @@ body{
   width:100%;
   height:100%;
   object-fit:cover;
-  opacity:0.18;   /* Increased visibility */
-  filter:grayscale(100%) contrast(120%) brightness(60%);
+  opacity:0.35;   /* Visible watermark */
+  filter:grayscale(70%) contrast(110%) brightness(85%);
 }
 
 /* ===== CONTENT WRAPPER ===== */
@@ -47,21 +48,20 @@ body{
   padding:60px 20px;
 }
 
-/* ===== GLASS SECTION (TRANSPARENT) ===== */
+/* ===== GLASS SECTIONS ===== */
 section{
-  margin-bottom:100px;
+  margin-bottom:120px;
   padding:50px;
-  background:rgba(255,255,255,0.05);  /* very transparent */
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.03); /* More transparent */
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
   border:1px solid rgba(255,255,255,0.15);
   border-radius:25px;
+  transition:0.4s ease;
 }
 
-/* Remove heavy dark look */
 section:hover{
-  background:rgba(255,255,255,0.07);
-  transition:0.4s ease;
+  background:rgba(255,255,255,0.06);
 }
 
 /* ===== TEXT ===== */
@@ -97,6 +97,7 @@ ul{
 .btn{
   display:inline-block;
   margin-top:20px;
+  margin-right:15px;
   padding:12px 28px;
   background:rgba(0,255,200,0.15);
   border:1px solid rgba(0,255,200,0.4);
@@ -120,7 +121,7 @@ footer{
   opacity:0.6;
 }
 
-/* Mobile */
+/* Responsive */
 @media(max-width:768px){
   section{
     padding:30px;
@@ -132,7 +133,7 @@ footer{
 
 <!-- SCROLLABLE FRAME ANIMATION -->
 <div id="animation-container">
-  <img id="frame" src="frames/ezgif-frame-001.jpg">
+  <img id="frame" src="frames/ezgif-frame-001.jpg" alt="Animation Frame">
 </div>
 
 <div class="content">
@@ -239,10 +240,13 @@ footer{
 const frame = document.getElementById("frame");
 const totalFrames = 240;
 
-window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+let ticking = false;
+
+function updateFrame() {
+  const scrollTop = window.scrollY;
+  const scrollHeight = document.body.scrollHeight - window.innerHeight;
   const scrollFraction = scrollTop / scrollHeight;
+
   const frameIndex = Math.min(
     totalFrames - 1,
     Math.floor(scrollFraction * totalFrames)
@@ -250,6 +254,15 @@ window.addEventListener("scroll", () => {
 
   const frameNumber = String(frameIndex + 1).padStart(3, '0');
   frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+
+  ticking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateFrame);
+    ticking = true;
+  }
 });
 </script>
 
